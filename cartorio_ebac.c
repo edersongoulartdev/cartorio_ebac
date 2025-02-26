@@ -1,26 +1,26 @@
-#include <stdio.h>  //biblioteca de comunicação com o usuário
-#include <stdlib.h> //biblioteca de alocação de espaço em memória
-#include <locale.h> //biblioteca de alocação por região 
-#include <string.h> //biblioteca responsável por cuidar das strings 
+#include <stdio.h>  //biblioteca de comunicaÃ§Ã£o com o usuÃ¡rio
+#include <stdlib.h> //biblioteca de alocaÃ§Ã£o de espaÃ§o em memÃ³ria
+#include <locale.h> //biblioteca de alocaÃ§Ã£o por regiÃ£o 
+#include <string.h> //biblioteca responsÃ¡vel por cuidar das strings 
 
-int registro() //função responsável por cadastrar usuários no sistema
+int registro() //funÃ§Ã£o responsÃ¡vel por cadastrar usuÃ¡rios no sistema
 {
-	//início: criação de variáveis/strings
+	//inÃ­cio: criaÃ§Ã£o de variÃ¡veis/strings
 	char arquivo[40];
 	char cpf[40];
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
-	//final: criação de variáveis/strings
+	//final: criaÃ§Ã£o de variÃ¡veis/strings
 	
-		printf("Digite seu CPF: "); //coletaando dados dos usuários
+		printf("Digite seu CPF: "); //coletaando dados dos usuÃ¡rios
 		scanf("%s", cpf); // %s refere-se a strings
 		
-		strcpy(arquivo, cpf); //Responsável por copiar os valores das strings
+		strcpy(arquivo, cpf); //ResponsÃ¡vel por copiar os valores das strings
 		
 		FILE *file; //cria o arquivo; "w" significa "escrever"
 		file = fopen(arquivo, "w"); //cria o arquivo
-		fprintf(file, cpf); //salva o valor da variável
+		fprintf(file, cpf); //salva o valor da variÃ¡vel
 		fclose(file); //fecha o arquivo
 		
 		file = fopen(arquivo, "a");
@@ -76,12 +76,12 @@ int consulta()
 	if(file == NULL)
 	{
 		
-		printf("CPF inválido. \n");
+		printf("CPF invÃ¡lido. \n");
 	}
 	
 	while(fgets(conteudo, 200, file) != NULL)
 	{	
-		printf("Informações do usuário:	");
+		printf("InformaÃ§Ãµes do usuÃ¡rio:	");
 		printf("%s", conteudo);
 		printf("\n\n");
 	}
@@ -106,7 +106,7 @@ int deletar()
 	
 	if(file == NULL)
 	{
-		printf("CPF deletado ou não existe no sistema. \n");
+		printf("CPF deletado ou nÃ£o existe no sistema. \n");
 		system("pause");
 	}
 
@@ -123,22 +123,22 @@ int main()
 	
 		system("cls");
 	
-		printf("\tCartório da EBAC\n\n");// início do menu
-		printf("Escolha uma das opções abaixo:\n\n");
+		printf("\tCartÃ³rio da EBAC\n\n");// inÃ­cio do menu
+		printf("Escolha uma das opÃ§Ãµes abaixo:\n\n");
 		printf("\t 1 - Cadastrar nome\n");
 		printf("\t 2 - Consultar nome\n");
 		printf("\t 3 - Deletar nome\n");
 		printf("\t 4 - Encerrar o programa\n\n");
-		printf("Digite a opção desejada: ");//fim do menu
+		printf("Digite a opÃ§Ã£o desejada: ");//fim do menu
 
-		scanf("%d", &opcao);//inicio da seleção 
+		scanf("%d", &opcao);//inicio da seleÃ§Ã£o 
 	
-		system("cls"); //responsáel por limpar a tela
+		system("cls"); //responsÃ¡el por limpar a tela
 		
 		switch(opcao)
 		{
 			case 1: 
-			registro();// chamada de funções
+			registro();// chamada de funÃ§Ãµes
 			break;
 			
 			case 2:
@@ -146,7 +146,7 @@ int main()
 			break;
 			
 			case 3:
-		    deletar();
+		        deletar();
 			break;	
 			
 			case 4:
@@ -155,7 +155,7 @@ int main()
 			break;
 			
 			default:
-			printf("Opção inválida! Tente novamente.\n");//fim da seleção
+			printf("OpÃ§Ã£o invÃ¡lida! Tente novamente.\n");//fim da seleÃ§Ã£o
 			system("pause");
 			break;	
 	    }
